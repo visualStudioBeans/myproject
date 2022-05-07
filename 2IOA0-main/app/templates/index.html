@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block description %}
+<meta name="description" content="The index page for the 2IOA0 project by group 1">
+{% endblock %}
+
+{% block imports %}
+<link rel="stylesheet" href="../static/css/index.css">
+<script src="../static/js/blockly/blockly_compressed.js"></script>
+<script src="../static/js/blockly/blocks_compressed.js"></script>
+<script src="../static/js/blockly/msg/js/en.js"></script>
+<script src="../static/js/blockly/python_compressed.js"></script>
+<script src="../static/js/blockly/arduino_compressed.js"></script>
+<script src="../static/js/blockly/blocks/blocks.js"></script>
+
+    <script>
+      var toolbox = {
+    "kind": "categoryToolbox",
+    "contents": [
+      {
+        "kind": "category",
+        "name": "Control",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "controls_if"
+          },
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Logic",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "logic_compare"
+          },
+          {
+            "kind": "block",
+            "type": "logic_negate"
+          },
+          {
+            "kind": "block",
+            "type": "inout_digital_read"
+          },
+          {
+            "kind": "block",
+            "type": "inout_digital_write"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Math",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "math_number"
+          }
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Variables",
+        "custom": "VARIABLE",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "variables_get"
+          },
+          {
+            "kind": "block",
+            "type": "variables_set"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+<script src="../static/js/codeToFlask.js"></script>
+<script src="../static/js/toggleBlurBlockSelector.js"></script>
+<script src="../static/js/toggleBackground.js"></script>
+<script src="../static/js/toggleCursorBlur.js"></script>
+<script src="../static/js/toggleGrayScale.js"></script>
+{% endblock %}
+
+{% block title %}
+<title>2IOA0</title>
+{% endblock %}
+
+{% block content %}
+<div class="blur_div top" id="blur_div_top"></div>
+<div class="container">
+    <h1>2IOA0 Group 1</h1>
+    <div class="blockly_custom">
+        <div id="blocklyDiv"></div>
+        <button class="send_code" onclick="codeToFlask()">Execute</button>
+        <button class="blurr_on_click" onclick="blurOnClick()">Blur</button>
+        <button class="background_on_click" onclick="backgroundOnClick()">Background</button>
+        <button class="blur_cursor_on_click" onclick="blurCursorOnClick(event)">Cursor</button>
+        <button class="grayscale_on_click" onclick="grayscaleOnClick()">Grayscale</button>
+    </div>
+</div>
+<div class="blur_div bottom" id="blur_div_bottom"></div>
+<div id="rel_blur"></div>
+{% endblock %}
+{% block script_imports %}
+<script>var workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});</script>
+{% endblock %}

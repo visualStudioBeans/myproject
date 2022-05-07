@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    margin-top: 30vh;
+    width: 30vw;
+    margin-left: 35vw;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: lightgray;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 3vh;
+}
+
+p {
+    padding: 25px 20px;
+    background-color: gray;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+a.error {
+    text-decoration: None;
+    color: white;
+}
+
+p:hover {
+    background-color: darkslategray;
+}
+
+p:active {
+    background-color: gray;
+}
